@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Oct 23 19:14:21 2018
+
+@author: fruechtnicht
+"""
+
 # -*- coding: utf-8 -*-
 """
 Created on Fri Oct 19 19:24:28 2018
@@ -161,7 +169,29 @@ i=0
 for index in y_test.index:
     df['HasChild'][index] = y_pred[i]
     i+=1
-       
+#### KNN replacement  v.2 ##########################################################
+#pred_df = df[df['HasChild'].null()]
+#train_df = df[df['HasChild'].notnull()]
+
+#
+#X = train_df.drop(['HasChild'], axis =1)
+#y = train_df['HasChild']
+#X_test = pred_df.drop(['HasChild'], axis =1)
+#y_test = pred_df['HasChild']
+#
+#
+#from sklearn.neighbors import KNeighborsClassifier
+#knn = KNeighborsClassifier(n_neighbors = 3, metric = 'minkowski', p = 2)
+#knn.fit(X, y)
+## Predicting a new result
+#y_pred = knn.predict(X_test)
+#
+#i=0
+#for index in y_test.index:
+#    df['HasChild'][index] = y_pred[i]
+#
+#    i+=1
+##########################################       
 ####Replacing missing data with Decision Tree   ##########################################################
     
 X = df.drop(columns=['EduDegree'])
